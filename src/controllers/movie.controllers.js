@@ -47,9 +47,18 @@ const setGenres = catchError(async(req, res)=>{
 const setDirectors = catchError( async (res, req) => {
     const {id} = req.params;
     const movie = await Movie.findByPk(id);
-    await movie.setDirectors(req.params);
-    const directors = await movie.getDirectors;
+    await movie.setDirectors(req.body);
+    const directors = await movie.getDirectors();
     return res.json(directors)
+})
+
+const setActors = catchError( async (req, res)=> {
+    const {id}= req.params;
+    const movie = await Movie.findByPk(id);
+    await movie.setActors(req.body);
+    const actors = Movie.getGenres();
+    return res.json(actors);
+
 })
 
 module.exports = {
@@ -58,5 +67,6 @@ module.exports = {
     getOne,
     remove,
     update,
-    setGenres
+    setGenres,
+    setDirectors
 }
