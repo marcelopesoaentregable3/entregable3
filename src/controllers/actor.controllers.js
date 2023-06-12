@@ -1,9 +1,9 @@
 const catchError = require('../utils/catchError');
-const Actor = require('../models/Actor')
+const Actor = require('../models/Actor');
 
 const getAll = catchError( async (req, res) => {
-    const actors = await Actor.getAll();
-    return res.json(res)
+    const actors = await Actor.findAll();
+    return res.json(actors);
 })
 
 const create = catchError( async (req, res) => {

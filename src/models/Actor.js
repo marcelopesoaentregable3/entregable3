@@ -24,4 +24,4 @@ const Actor = sequelize.define('actor', {
     }
 });
 
-module.exports = Director;
+module.exports = Actor;

@@ -8,10 +8,10 @@ Movie.belongsToMany(Genre, {through: 'MoviesGenres'});
 Genre.belongsToMany(Movie, {through: 'MoviesGenres'});
 
 // n --> m relation
-Movie.belongsToMany(Director, {Through: 'MoviesDirectors'})
-Director.belongsToMany(Movie, {Through: 'MoviesDirectors'})
+Movie.belongsToMany(Director, {through: 'MoviesDirectors'})
+Director.belongsToMany(Movie, {through: 'MoviesDirectors'})
 
 // n --> m relation
-Movie.belongsToMany(Actor, {Through: 'MoviesActors'})
-Actor.belongsToMany(Movie, {Through: 'MoviesActors'})
+Movie.belongsToMany(Actor, {through: 'MoviesActors'})
+Actor.belongsToMany(Movie, {through: 'MoviesActors'})
 
