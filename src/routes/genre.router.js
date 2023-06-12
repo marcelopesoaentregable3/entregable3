@@ -1,15 +1,15 @@
-const { getAll, create, getOne, remove, update } = require('../controllers/genre.controllers    ');
+const { getAll, create, getOne, remove, update } = require('../controllers/genre.controllers');
 const express = require('express');
 
 const routerGenre = express.Router();
 
-routerGenre('/')
+routerGenre.route('/')
     .get(getAll)
     .post(create);
 
 routerGenre.route('/:id')
     .get(getOne)
     .delete(remove)
-    .put(update);
+    .put(update)
 
 module.exports = routerGenre;
